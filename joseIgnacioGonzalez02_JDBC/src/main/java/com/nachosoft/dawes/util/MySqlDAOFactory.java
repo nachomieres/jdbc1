@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import com.nachosoft.dawes.daoimpl.DeptDAO;
+import com.nachosoft.dawes.daoimpl.DeptDAOimpl;
+
 public class MySqlDAOFactory {
 
 	private Connection con;
@@ -33,8 +36,7 @@ public class MySqlDAOFactory {
 		this.con = con;
 	}
 
-
-	//public UsuarioDAO getUsuarioDAO() {
-	//	return new UsuarioDAOImpl(con);
-	//}
+	public DeptDAO getDeptDAO() {
+		return new DeptDAOimpl(con);
+	}
 }

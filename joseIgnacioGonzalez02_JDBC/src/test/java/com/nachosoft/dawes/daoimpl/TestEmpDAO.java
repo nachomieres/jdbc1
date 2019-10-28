@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.nachosoft.dawes.modelo.DeptVO;
 import com.nachosoft.dawes.util.MySqlDAOFactory;
 
 public class TestEmpDAO {
@@ -14,5 +15,7 @@ public class TestEmpDAO {
 	public void t1ConectarOK() {
 		assertNotNull(f.getCon());
 	}
+	
+
 
 }

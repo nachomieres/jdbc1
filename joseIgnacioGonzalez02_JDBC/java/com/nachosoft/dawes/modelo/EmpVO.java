@@ -24,11 +24,13 @@ public class EmpVO {
 		this.sal = sal;
 	}
 	
-	public EmpVO(String ename, LocalDate hiredate, float sal) {
+	public EmpVO(int empNO, String ename, LocalDate hiredate, float sal, int deptNO) {
 		super();
+		this.empNO = empNO;
 		this.ename = ename;
 		this.hiredate = hiredate;
 		this.sal = sal;
+		this.deptNO = deptNO;
 	}
 	
 	

@@ -6,6 +6,8 @@ import java.sql.SQLException;
 
 import com.nachosoft.dawes.daoimpl.DeptDAO;
 import com.nachosoft.dawes.daoimpl.DeptDAOimpl;
+import com.nachosoft.dawes.daoimpl.EmpDAO;
+import com.nachosoft.dawes.daoimpl.EmpDAOImpl;
 
 public class MySqlDAOFactory {
 
@@ -13,18 +15,18 @@ public class MySqlDAOFactory {
 	
 	public MySqlDAOFactory() {
 		// cargar el driver
-				String url="jdbc:mysql://localhost/tema1";
-				String usuario="root";
-				String password="temporal";
-				try {
-					con=DriverManager.getConnection(url,usuario,password);
-					System.out.println("conexion ok");
-					
-				} catch (SQLException e) {
-					System.out.println("hay un error en la conexi�n"+e.getMessage());
-				}
+			String url="jdbc:mysql://localhost/tema1";
+			String usuario="root";
+			String password="temporal";
+			try {
+				con=DriverManager.getConnection(url,usuario,password);
+				System.out.println("conexion ok");
 				
-	}
+			} catch (SQLException e) {
+				System.out.println("hay un error en la conexi�n"+e.getMessage());
+			}
+			
+}
 	
 	
 	public Connection getCon() {
@@ -38,5 +40,9 @@ public class MySqlDAOFactory {
 
 	public DeptDAO getDeptDAO() {
 		return new DeptDAOimpl(con);
+	}
+	
+	public EmpDAO getEmpDAO () {
+		return new EmpDAOImpl(con);
 	}
 }
